@@ -1,0 +1,41 @@
+<!-- order_form.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка заказа</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- Контейнер для меню навигации слева сверху -->
+    <div class="nav-left-container"></div>
+
+    <div class="container">
+        <h3 align="center">Отправка заказа</h3>
+        <form action="https://example.com/api/submit_order" method="GET" target="_self">
+            <p>Имя: <input type="text" name="customer_name" size="20" value="Иван Иванов" required></p>
+            <p>Адрес: <input type="text" name="address" size="50" value="ул. Ленина, д. 1, кв. 1" required></p>
+            <p>Кол-во товаров: <input type="number" name="quantity" value="1" required></p>
+            <p>Способ оплаты:
+                <input type="radio" name="payment_method" value="card" checked> Карта
+                <input type="radio" name="payment_method" value="cash"> Наличные
+            </p>
+            <p>Доставка:
+                <input type="checkbox" name="delivery" value="yes" checked> Да
+            </p>
+            <p>Дата заказа: <input type="date" name="order_date" value="2024-10-25" required></p>
+            <p>Пароль: <input type="password" name="password" value="password123" required></p>
+            <input type="hidden" name="order_id" value="12345">
+            <p>
+                <input type="reset" value="Обновить">
+                <input type="submit" value="Отправить">
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>

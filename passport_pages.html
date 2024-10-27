@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Паспортные страницы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Контейнер для меню навигации слева сверху -->
+    <div class="nav-left-container"></div>
+
+    <div class="container passport-container">
+        <div class="passport-page left-page">
+            <h3>Вторая страница</h3>
+            <form>
+                <p><label>Фамилия:<br> <input type="text" id="surname" value="Иванов"></label></p>
+                <p><label>Имя:<br> <input type="text" id="name" value="Иван"></label></p>
+                <p><label>Отчество:<br> <input type="text" value="Иванович"></label></p>
+                <p><label>Дата рождения:<br> <input type="date" id="birthdate" value="1990-01-01"></label></p>
+                <p><label>Место рождения:<br> <input type="text" value="Москва"></label></p>
+            </form>
+        </div>
+        <div class="passport-page right-page">
+            <h3>Третья страница</h3>
+            <form>
+                <p><label>Номер паспорта:<br> <input type="text" value="1234 567890"></label></p>
+                <p><label>Дата выдачи:<br> <input type="date" value="2010-01-01"></label></p>
+                <p><label>Кем выдан:<br> <input type="text" value="ОВД г. Москвы"></label></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

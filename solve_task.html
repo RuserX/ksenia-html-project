@@ -1,0 +1,73 @@
+<!-- solve_task.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Решение алгоритмической задачи</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Контейнер для меню навигации слева сверху -->
+    <div class="nav-left-container"></div>
+
+    <div class="container">
+        <h3>Решение алгоритмической задачи</h3>
+        <p name="formulation">Дано вещественное число A. Вычислить \(x = a^2 + 4 + 5\) при \(a < 62\); в противном
+                случае \(x=\frac{1}{a^2} + 4a + 5\). Если все условия выполнены, отправить все на сервер.</p>
+                <form action="https://www.example.com/submit" id="taskForm" name="taskForm" target="_blank">
+                    <ul>
+                        <li>Формулировка задачи:<br>
+                            <textarea cols="60" rows="4" id="task"
+                                name="formulation">Дано вещественное число A. Вычислить x = a^2 + 4 + 5 при a < 62; в противном случае x = 1/a^2 + 4a + 5. Если все условия выполнены, отправить все на сервер.</textarea>
+                        </li>
+                        <li>A: <input id="a" name="a" type="number" step="any" value="50"></li>
+                        <li>Результат решения задачи: <input id="result" name="result" value="не определен" readonly>
+                        </li>
+                        <li>Действие 1: <input id="verify" type="button" value="Проверить"></li>
+                        <li>Действие 2: <input id="send" type="button" value="Отправить"></li>
+                    </ul>
+                </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let result;
+        let check;
+
+        function verify() {
+            const a = parseFloat(document.getElementById('a').value);
+            if (isNaN(a)) {
+                alert("Введите корректное значение A");
+                return;
+            }
+
+            if (a < 62) {
+                result = Math.pow(a, 2) + 4 + 5;
+            } else {
+                result = 1 / Math.pow(a, 2) + 4 * a + 5;
+            }
+
+            document.getElementById('result').value = result;
+            check = true;
+        }
+
+        function send() {
+            if (check) {
+                document.getElementById('taskForm').submit();
+            } else {
+                alert("Пожалуйста, сначала выполните проверку.");
+            }
+        }
+
+        const elementVerify = document.getElementById('verify');
+        elementVerify.addEventListener('click', verify);
+
+        const elementSend = document.getElementById('send');
+        elementSend.addEventListener('click', send);
+    </script>
+</body>
+
+</html>

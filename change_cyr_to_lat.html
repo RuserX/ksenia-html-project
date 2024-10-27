@@ -1,0 +1,89 @@
+<!-- change_cyr_to_lat.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Изменяем кириллицу на латиницу по клику</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Контейнер для меню навигации слева сверху -->
+    <div class="nav-left-container"></div>
+
+    <div class="container passport-container">
+        <div class="passport-page left-page">
+            <h3>Вторая страница</h3>
+            <form>
+                <p><label>Фамилия:<br> <input type="text" id="surname" value="Иванов"></label></p>
+                <p><label>Имя:<br> <input type="text" id="name" value="Иван"></label></p>
+                <p><label>Отчество:<br> <input type="text" id="patronymic" value="Иванович"></label></p>
+                <p><label>Дата рождения:<br> <input type="date" id="birthdate" value="1990-01-01"></label></p>
+                <p><label>Место рождения:<br> <input type="text" id="birthplace" value="Москва"></label></p>
+            </form>
+        </div>
+        <div class="passport-page right-page">
+            <h3>Третья страница</h3>
+            <form>
+                <p><label>Номер паспорта:<br> <input type="text" id="passport-number" value="1234 567890"></label></p>
+                <p><label>Дата выдачи:<br> <input type="date" id="issue-date" value="2010-01-01"></label></p>
+                <p><label>Кем выдан:<br> <input type="text" id="issuer" value="ОВД г. Москвы"></label></p>
+            </form>
+        </div>
+    </div>
+
+    <button id="change-button" class="centered-button">Изменить на латиницу</button>
+
+    <script src="script.js"></script>
+    <script>
+        // Функция для транслитерации
+        function transliterate(word, direction) {
+            const cyrToLatMap = {
+                'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'E', 'Ж': 'Zh', 'З': 'Z',
+                'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R',
+                'С': 'S', 'Т': 'T', 'У': 'U', 'Ф': 'F', 'Х': 'Kh', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Shch',
+                'Ы': 'Y', 'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
+                'е': 'e', 'ё': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm',
+                'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'kh',
+                'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ы': 'y', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+            };
+
+            const latToCyrMap = Object.fromEntries(
+                Object.entries(cyrToLatMap).map(([cyr, lat]) => [lat, cyr])
+            );
+
+            const map = direction === 'cyrToLat' ? cyrToLatMap : latToCyrMap;
+
+            return word.split('').map(char => map[char] || char).join('');
+        }
+
+        // Функция для смены текста и обновления кнопки
+        function changeText() {
+            const inputs = ['surname', 'name', 'patronymic', 'birthplace'];
+            let direction = 'cyrToLat';
+
+            inputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (/[А-Яа-яЁё]/.test(input.value)) {
+                    direction = 'cyrToLat';
+                } else {
+                    direction = 'latToCyr';
+                }
+                input.value = transliterate(input.value, direction);
+            });
+
+            const button = document.getElementById('change-button');
+            if (direction === 'cyrToLat') {
+                button.textContent = 'Изменить на кириллицу';
+            } else {
+                button.textContent = 'Изменить на латиницу';
+            }
+        }
+
+        document.getElementById('change-button').addEventListener('click', changeText);
+    </script>
+</body>
+
+</html>
