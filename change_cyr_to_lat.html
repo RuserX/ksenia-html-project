@@ -3,9 +3,13 @@
 <html lang="ru">
 
 <head>
+    <!-- Устанавливаем кодировку документа как UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Заголовок страницы, который отображается в вкладке браузера -->
     <title>Изменяем кириллицу на латиницу по клику</title>
+    <!-- Подключаем файл стилей styles.css -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифт Roboto с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -14,32 +18,49 @@
     <div class="nav-left-container"></div>
 
     <div class="container passport-container">
+        <!-- Контейнер для второй страницы паспорта -->
         <div class="passport-page left-page">
+            <!-- Заголовок третьего уровня для второй страницы паспорта -->
             <h3>Вторая страница</h3>
+            <!-- Форма для ввода данных второй страницы паспорта -->
             <form>
+                <!-- Поле ввода для фамилии -->
                 <p><label>Фамилия:<br> <input type="text" id="surname" value="Иванов"></label></p>
+                <!-- Поле ввода для имени -->
                 <p><label>Имя:<br> <input type="text" id="name" value="Иван"></label></p>
+                <!-- Поле ввода для отчества -->
                 <p><label>Отчество:<br> <input type="text" id="patronymic" value="Иванович"></label></p>
+                <!-- Поле ввода для даты рождения -->
                 <p><label>Дата рождения:<br> <input type="date" id="birthdate" value="1990-01-01"></label></p>
+                <!-- Поле ввода для места рождения -->
                 <p><label>Место рождения:<br> <input type="text" id="birthplace" value="Москва"></label></p>
             </form>
         </div>
+        <!-- Контейнер для третьей страницы паспорта -->
         <div class="passport-page right-page">
+            <!-- Заголовок третьего уровня для третьей страницы паспорта -->
             <h3>Третья страница</h3>
+            <!-- Форма для ввода данных третьей страницы паспорта -->
             <form>
+                <!-- Поле ввода для номера паспорта -->
                 <p><label>Номер паспорта:<br> <input type="text" id="passport-number" value="1234 567890"></label></p>
+                <!-- Поле ввода для даты выдачи паспорта -->
                 <p><label>Дата выдачи:<br> <input type="date" id="issue-date" value="2010-01-01"></label></p>
+                <!-- Поле ввода для органа, выдавшего паспорт -->
                 <p><label>Кем выдан:<br> <input type="text" id="issuer" value="ОВД г. Москвы"></label></p>
             </form>
         </div>
     </div>
 
+    <!-- Кнопка для изменения текста на латиницу или кириллицу -->
     <button id="change-button" class="centered-button">Изменить на латиницу</button>
 
+    <!-- Подключаем файл скриптов script.js -->
     <script src="script.js"></script>
     <script>
-        // Функция для транслитерации
+        // Функция для транслитерации текста
         function transliterate(word, direction) {
+            // Словарь для перевода кириллицы в латиницу
             const cyrToLatMap = {
                 'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'E', 'Ж': 'Zh', 'З': 'Z',
                 'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R',
@@ -50,20 +71,25 @@
                 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ы': 'y', 'э': 'e', 'ю': 'yu', 'я': 'ya'
             };
 
+            // Создание словаря для перевода латиницы в кириллицу
             const latToCyrMap = Object.fromEntries(
                 Object.entries(cyrToLatMap).map(([cyr, lat]) => [lat, cyr])
             );
 
+            // Выбор нужного словаря в зависимости от направления перевода
             const map = direction === 'cyrToLat' ? cyrToLatMap : latToCyrMap;
 
+            // Транслитерация текста
             return word.split('').map(char => map[char] || char).join('');
         }
 
         // Функция для смены текста и обновления кнопки
         function changeText() {
+            // Массив с id полей ввода, которые нужно изменить
             const inputs = ['surname', 'name', 'patronymic', 'birthplace'];
             let direction = 'cyrToLat';
 
+            // Проверка текущего состояния текста и определение направления перевода
             inputs.forEach(id => {
                 const input = document.getElementById(id);
                 if (/[А-Яа-яЁё]/.test(input.value)) {
@@ -71,9 +97,11 @@
                 } else {
                     direction = 'latToCyr';
                 }
+                // Изменение текста в поле ввода
                 input.value = transliterate(input.value, direction);
             });
 
+            // Обновление текста кнопки в зависимости от направления перевода
             const button = document.getElementById('change-button');
             if (direction === 'cyrToLat') {
                 button.textContent = 'Изменить на кириллицу';
@@ -82,6 +110,7 @@
             }
         }
 
+        // Добавление обработчика события 'click' для кнопки
         document.getElementById('change-button').addEventListener('click', changeText);
     </script>
 </body>

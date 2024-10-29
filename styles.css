@@ -2,122 +2,167 @@
 
 /* Основные стили для всех страниц */
 body {
+  /* Устанавливаем шрифт по умолчанию для всего документа */
   font-family: "Roboto", sans-serif;
+  /* Убираем отступы и поля по умолчанию */
   margin: 0;
   padding: 0;
+  /* Устанавливаем цвет фона для всего документа */
   background-color: #f9f9f9;
 }
 
 .container {
+  /* Устанавливаем максимальную ширину контейнера */
   max-width: 800px;
+  /* Центрируем контейнер по горизонтали */
   margin: 0 auto;
+  /* Устанавливаем внутренний отступ */
   padding: 20px;
 }
 
 .nav-left-container {
+  /* Фиксируем контейнер навигации слева сверху */
   position: fixed;
   top: 0;
   left: 0;
+  /* Устанавливаем ширину и высоту контейнера */
   width: 200px;
   height: 100%;
+  /* Устанавливаем цвет фона */
   background-color: #333;
+  /* Устанавливаем внутренний отступ */
   padding: 10px;
+  /* Добавляем тень */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для элементов навигации */
 .nav-left ul {
+  /* Убираем маркеры списка */
   list-style-type: none;
+  /* Убираем внутренние отступы */
   padding: 0;
 }
 
 .nav-left ul li {
+  /* Устанавливаем отступы между элементами списка */
   margin: 15px 0;
 }
 
 .nav-left ul li a {
+  /* Устанавливаем цвет текста */
   color: #fff;
+  /* Убираем подчеркивание ссылок */
   text-decoration: none;
+  /* Устанавливаем внутренние отступы */
   padding: 10px 15px;
+  /* Устанавливаем блоковый дисплей */
   display: block;
+  /* Закругляем углы */
   border-radius: 4px;
+  /* Добавляем плавный переход для фона и цвета текста */
   transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-left ul li a:hover {
+  /* Изменяем цвет фона и текста при наведении */
   background-color: #575757;
   color: #fff;
 }
 
 .nav-left ul li a.active {
+  /* Устанавливаем цвет фона и текста для активного элемента */
   background-color: #ff9800;
   color: #fff;
 }
 
 /* Стили для index.html */
 .nav-right {
+  /* Фиксируем контейнер навигации справа сверху */
   position: fixed;
   top: 20px;
   right: 20px;
+  /* Устанавливаем цвет фона */
   background-color: #fff;
+  /* Устанавливаем внутренние отступы */
   padding: 15px;
+  /* Закругляем углы */
   border-radius: 8px;
+  /* Добавляем тень */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-right ul {
+  /* Убираем маркеры и отступы списка */
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
 .nav-right ul li {
+  /* Устанавливаем отступы между элементами списка */
   margin: 5px 0;
 }
 
 .nav-right ul li a {
+  /* Устанавливаем цвет текста */
   color: #333;
+  /* Убираем подчеркивание ссылок */
   text-decoration: none;
+  /* Устанавливаем внутренние отступы */
   padding: 10px 15px;
+  /* Устанавливаем блоковый дисплей */
   display: block;
+  /* Закругляем углы */
   border-radius: 4px;
+  /* Добавляем плавный переход для фона и цвета текста */
   transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-right ul li a:hover {
+  /* Изменяем цвет фона и текста при наведении */
   background-color: #f0f0f0;
   color: #000;
 }
 
 .back-to-top {
+  /* Выравниваем элемент по правой стороне */
   float: right;
+  /* Устанавливаем левый отступ */
   margin-left: 10px;
 }
 
 .album img {
+  /* Устанавливаем размеры изображений в альбоме */
   width: 50px;
   height: 50px;
 }
 
 .centered-image {
+  /* Центрируем изображение */
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .image-caption {
+  /* Стили для подписей под изображениями */
   text-align: center;
   font-size: 14px;
   color: #555;
 }
 
 .enlarged-image {
+  /* Устанавливаем размеры для увеличенных изображений */
   width: 200px;
   height: 200px;
 }
 
 .nav-image {
+  /* Устанавливаем размеры изображений в навигации */
   width: 32px;
   height: 32px;
+  /* Выравниваем изображение по вертикали */
   vertical-align: middle;
 }
 
@@ -132,24 +177,34 @@ body {
 
 /* Центрирование кнопки */
 .centered-button {
+  /* Центрируем кнопку */
   display: block;
   margin: 20px auto;
+  /* Устанавливаем внутренние отступы */
   padding: 10px 20px;
+  /* Устанавливаем цвет фона и текста */
   background-color: #ff9800;
   color: #fff;
+  /* Убираем границу */
   border: none;
+  /* Закругляем углы */
   border-radius: 4px;
+  /* Устанавливаем указатель курсора */
   cursor: pointer;
+  /* Устанавливаем размер шрифта */
   font-size: 16px;
+  /* Добавляем плавный переход для фона */
   transition: background-color 0.3s;
 }
 
 .centered-button:hover {
+  /* Изменяем цвет фона при наведении */
   background-color: #e68a00;
 }
 
 /* Стили для результата */
 .result {
+  /* Устанавливаем размер и стиль шрифта для результата */
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
@@ -158,12 +213,14 @@ body {
 
 /* Стили для contact_form.html */
 form p {
+  /* Устанавливаем отступы между параграфами */
   margin: 10px 0;
 }
 
 /* Стили для lists.html */
 ol,
 ul {
+  /* Устанавливаем отступы для списков */
   margin: 10px 0;
 }
 
@@ -171,16 +228,19 @@ ol ul,
 ul ul,
 ul ol,
 ol ol {
+  /* Устанавливаем отступы для вложенных списков */
   margin: 0 0 0 20px;
 }
 
 /* Стили для tables_task.html */
 body.tables-task-2 {
+  /* Устанавливаем фон с изображением для страницы */
   background: url("images/background.jpg") no-repeat center center fixed;
   background-size: 1366px 768px;
 }
 
 .table-container {
+  /* Центрируем таблицу по вертикали и горизонтали */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,59 +248,71 @@ body.tables-task-2 {
 }
 
 table {
+  /* Устанавливаем размеры и фон для таблицы */
   width: 600px;
   background: url("images/background_table.jpg") no-repeat center center;
   background-size: cover;
+  /* Разделяем границы ячеек */
   border-collapse: separate;
   border-spacing: 15px;
+  /* Устанавливаем цвет границы */
   border: 2px solid red;
 }
 
 table td,
 table th {
+  /* Устанавливаем цвет и отступы для ячеек таблицы */
   border: 2px solid red;
   padding: 10px;
   background-color: gray;
 }
 
 .centered {
+  /* Центрирование текста */
   text-align: center;
 }
 
 .green-background {
+  /* Устанавливаем зеленый фон для ячеек */
   background-color: green;
 }
 
 .inner-table {
+  /* Устанавливаем размеры и стиль для вложенных таблиц */
   width: 100%;
   height: 100%;
   border-collapse: collapse;
 }
 
 .inner-table td {
+  /* Устанавливаем цвет и отступы для ячеек вложенных таблиц */
   border: 1px solid black;
   padding: 20px;
   background-color: gray;
 }
 
 .image-cell img {
+  /* Центрируем изображение */
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .right-aligned-image {
+  /* Выравниваем изображение по правой стороне */
   float: right;
   margin-right: 15px;
 }
 
 .nav-link.active {
+  /* Выделяем активную ссылку в навигации */
   font-weight: bold;
   color: red;
 }
 
 /* Стили для страницы паспорта */
 .passport-container {
+  /* Разделяем страницы паспорта и устанавливаем фон */
   display: flex;
   justify-content: space-between;
   background-color: #eae5dc;
@@ -252,6 +324,7 @@ table th {
 }
 
 .passport-page {
+  /* Устанавливаем размеры и стиль для страниц паспорта */
   width: 48%;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
@@ -262,6 +335,7 @@ table th {
 }
 
 .passport-page::before {
+  /* Добавляем водяной знак на страницы паспорта */
   content: "";
   position: absolute;
   top: 0;
@@ -275,6 +349,7 @@ table th {
 }
 
 .passport-page h3 {
+  /* Устанавливаем стиль заголовка страниц паспорта */
   text-align: center;
   margin-bottom: 20px;
   color: #8b4513;
@@ -282,16 +357,19 @@ table th {
 }
 
 .passport-page form p {
+  /* Устанавливаем отступы между параграфами формы */
   margin: 10px 0;
 }
 
 .passport-page form label {
+  /* Устанавливаем стиль для меток формы */
   font-weight: bold;
   color: #333;
   font-family: "Georgia", serif;
 }
 
 .passport-page form input {
+  /* Устанавливаем стиль для полей ввода формы */
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -303,6 +381,7 @@ table th {
 }
 
 .passport-page form input[readonly] {
+  /* Устанавливаем стиль для полей ввода только для чтения */
   background-color: #f9f9f9;
   color: #555;
 }

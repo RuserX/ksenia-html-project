@@ -3,9 +3,13 @@
 <html lang="ru">
 
 <head>
+    <!-- Устанавливаем кодировку документа как UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Заголовок страницы, который отображается в вкладке браузера -->
     <title>Вычисление значения x</title>
+    <!-- Подключаем файл стилей styles.css -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифт Roboto с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -14,28 +18,41 @@
     <div class="nav-left-container"></div>
 
     <div class="container">
+        <!-- Заголовок третьего уровня для раздела "Вычисление значения x" -->
         <h3>Вычисление значения x</h3>
+        <!-- Описание задачи -->
         <p>Дано вещественное число A. Вычислить \(x = a^2 + 4 + 5\) при \(a < 62\); в противном случае \(x=\frac{1}{a^2}
                 + 4a + 5\).</p>
+                <!-- Форма для ввода значения A -->
                 <form id="calc-form">
+                    <!-- Поле ввода для значения A -->
                     <p><label>Введите значение A:<br> <input type="number" id="a-value" step="any" value="50"
                                 required></label></p>
+                    <!-- Кнопка для отправки формы и вычисления значения x -->
                     <button type="submit" class="centered-button">Вычислить x</button>
                 </form>
+                <!-- Параграф для отображения результата вычисления -->
                 <p id="result" class="result"></p>
     </div>
 
+    <!-- Подключаем файл скриптов script.js -->
     <script src="script.js"></script>
     <script>
+        // Добавляем обработчик события 'submit' для формы
         document.getElementById('calc-form').addEventListener('submit', function (event) {
+            // Предотвращаем отправку формы по умолчанию
             event.preventDefault();
+            // Получаем значение A из поля ввода и преобразуем его в число с плавающей точкой
             const a = parseFloat(document.getElementById('a-value').value);
+            // Переменная для хранения результата вычисления x
             let x;
+            // Вычисляем значение x в зависимости от условия
             if (a < 62) {
                 x = Math.pow(a, 2) + 4 + 5;
             } else {
                 x = 1 / (Math.pow(a, 2)) + 4 * a + 5;
             }
+            // Отображаем результат вычисления в элементе с id="result"
             document.getElementById('result').textContent = 'Результат: x = ' + x;
         });
     </script>

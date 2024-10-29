@@ -3,10 +3,15 @@
 <html lang="ru">
 
 <head>
+    <!-- Устанавливаем кодировку документа как UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Заголовок страницы, который отображается в вкладке браузера -->
     <title>Таблицы, задание 2</title>
+    <!-- Подключаем файл стилей styles.css -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифт Roboto с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключаем файл скриптов script.js -->
     <script src="script.js"></script>
 </head>
 
@@ -14,51 +19,70 @@
     <!-- Контейнер для меню навигации слева сверху -->
     <div class="nav-left-container"></div>
     <div class="table-container">
+        <!-- Основная таблица -->
         <table>
-            <!-- Первый ряд -->
+            <!-- Первый ряд таблицы -->
             <tr style="height: 100px;">
+                <!-- Первая ячейка первого ряда -->
                 <td style="width: 200px; position: relative;">
+                    <!-- Ссылка на главную страницу с изображением внутри -->
                     <a href="index.html">
                         <img src="/images/image1.jpg" alt="Изображение 1"
                             style="position: absolute; top: 0; right: 0; height: 50px; width: auto;">
                     </a>
+                    <!-- Надпись под изображением -->
                     <div class="image-caption">Надпись под изображением</div>
                 </td>
+                <!-- Вторая ячейка первого ряда (пустая) -->
                 <td></td>
+                <!-- Третья ячейка первого ряда -->
                 <td style="width: 200px;"></td>
             </tr>
 
-            <!-- Второй ряд (объединенная ячейка) -->
+            <!-- Второй ряд таблицы (объединенная ячейка) -->
             <tr style="height: 20px;">
                 <td colspan="3"></td>
             </tr>
 
-            <!-- Третий ряд -->
+            <!-- Третий ряд таблицы -->
             <tr>
+                <!-- Первая ячейка третьего ряда -->
                 <td style="width: 400px; height: 300px;"></td>
+                <!-- Вторая ячейка третьего ряда с зеленым фоном -->
                 <td class="green-background"></td>
             </tr>
 
-            <!-- Четвертый ряд -->
+            <!-- Четвертый ряд таблицы -->
             <tr>
+                <!-- Первая ячейка четвертого ряда -->
                 <td>
+                    <!-- Вложенная таблица -->
                     <table class="inner-table">
+                        <!-- Первый ряд вложенной таблицы -->
                         <tr>
+                            <!-- Первая ячейка первого ряда вложенной таблицы -->
                             <td>
+                                <!-- Ссылка на страницу со списками с изображением внутри -->
                                 <a href="lists.html">
                                     <img src="/images/image2.jpg" alt="Изображение 2"
                                         style="padding: 20px; width: auto; height: 100px;">
                                 </a>
                             </td>
+                            <!-- Вторая ячейка первого ряда вложенной таблицы (пустая) -->
                             <td></td>
                         </tr>
+                        <!-- Второй ряд вложенной таблицы -->
                         <tr>
+                            <!-- Первая ячейка второго ряда вложенной таблицы (пустая) -->
                             <td></td>
+                            <!-- Вторая ячейка второго ряда вложенной таблицы (пустая) -->
                             <td></td>
                         </tr>
                     </table>
                 </td>
+                <!-- Вторая ячейка четвертого ряда -->
                 <td>
+                    <!-- Ссылка на страницу с первым заданием по таблицам с изображением внутри -->
                     <a href="tables_task_1.html">
                         <img src="/images/image3.jpg" alt="Изображение 3" class="right-aligned-image"
                             style="padding: 15px; width: auto; height: 150px;">

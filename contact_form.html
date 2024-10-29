@@ -3,10 +3,15 @@
 <html lang="ru">
 
 <head>
+    <!-- Устанавливаем кодировку документа как UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Заголовок страницы, который отображается в вкладке браузера -->
     <title>Отправка контактных данных</title>
+    <!-- Подключаем файл стилей styles.css -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифт Roboto с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключаем файл скриптов script.js -->
     <script src="script.js"></script>
 </head>
 
@@ -15,14 +20,23 @@
     <div class="nav-left-container"></div>
 
     <div class="container">
+        <!-- Заголовок третьего уровня для раздела "Отправка контактных данных" -->
         <h3 align="center">Отправка контактных данных</h3>
+        <!-- Форма для отправки контактных данных на сервер -->
         <form action="https://example.com/api/submit" method="GET" target="_self">
+            <!-- Поле ввода для фамилии -->
             <p>Фамилия: <input type="text" name="last_name" size="20" value="Иванов" required></p>
+            <!-- Поле ввода для имени -->
             <p>Имя: <input type="text" name="first_name" size="20" value="Иван" required></p>
+            <!-- Поле ввода для группы -->
             <p>Группа: <input type="text" name="group" size="20" value="Группа 1" required></p>
+            <!-- Поле ввода для мобильного телефона -->
             <p>Мобильный телефон: <input type="tel" name="phone" size="20" value="+79998887766" required></p>
+            <!-- Поле ввода для электронной почты -->
             <p>Электронная почта: <input type="email" name="email" size="20" value="ivanov@example.com" required></p>
+            <!-- Поле ввода для даты отправки сообщения -->
             <p>Дата отправки сообщения: <input type="date" name="submission_date" value="2024-10-25" required></p>
+            <!-- Кнопки для сброса формы и отправки формы -->
             <p>
                 <input type="reset" value="Обновить">
                 <input type="submit" value="Отправить">

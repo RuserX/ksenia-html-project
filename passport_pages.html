@@ -2,9 +2,13 @@
 <html lang="ru">
 
 <head>
+    <!-- Устанавливаем кодировку документа как UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Заголовок страницы, который отображается в вкладке браузера -->
     <title>Паспортные страницы</title>
+    <!-- Подключаем файл стилей styles.css -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифт Roboto с Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -13,26 +17,41 @@
     <div class="nav-left-container"></div>
 
     <div class="container passport-container">
+        <!-- Контейнер для второй страницы паспорта -->
         <div class="passport-page left-page">
+            <!-- Заголовок третьего уровня для второй страницы паспорта -->
             <h3>Вторая страница</h3>
+            <!-- Форма для ввода данных второй страницы паспорта -->
             <form>
+                <!-- Поле ввода для фамилии -->
                 <p><label>Фамилия:<br> <input type="text" id="surname" value="Иванов"></label></p>
+                <!-- Поле ввода для имени -->
                 <p><label>Имя:<br> <input type="text" id="name" value="Иван"></label></p>
+                <!-- Поле ввода для отчества -->
                 <p><label>Отчество:<br> <input type="text" value="Иванович"></label></p>
+                <!-- Поле ввода для даты рождения -->
                 <p><label>Дата рождения:<br> <input type="date" id="birthdate" value="1990-01-01"></label></p>
+                <!-- Поле ввода для места рождения -->
                 <p><label>Место рождения:<br> <input type="text" value="Москва"></label></p>
             </form>
         </div>
+        <!-- Контейнер для третьей страницы паспорта -->
         <div class="passport-page right-page">
+            <!-- Заголовок третьего уровня для третьей страницы паспорта -->
             <h3>Третья страница</h3>
+            <!-- Форма для ввода данных третьей страницы паспорта -->
             <form>
+                <!-- Поле ввода для номера паспорта -->
                 <p><label>Номер паспорта:<br> <input type="text" value="1234 567890"></label></p>
+                <!-- Поле ввода для даты выдачи паспорта -->
                 <p><label>Дата выдачи:<br> <input type="date" value="2010-01-01"></label></p>
+                <!-- Поле ввода для органа, выдавшего паспорт -->
                 <p><label>Кем выдан:<br> <input type="text" value="ОВД г. Москвы"></label></p>
             </form>
         </div>
     </div>
 
+    <!-- Подключаем файл скриптов script.js -->
     <script src="script.js"></script>
 </body>
 
